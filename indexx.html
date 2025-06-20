@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Irene Zardini – Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #f8f6f0 0%, #e9e4f0 60%, #d1c4e9 100%);
+      color: #3d246c;
+      display: flex;
+      height: 100vh;
+      min-height: 100vh;
+    }
+    nav {
+      width: 320px;
+      background: #ede7f6;
+      padding: 2.5rem 2rem 2rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-right: 1.5px solid #b39ddb;
+      border-radius: 0 24px 24px 0;
+      box-shadow: 2px 0 24px 0 rgba(179,157,219,0.13);
+      min-width: 260px;
+      max-width: 340px;
+    }
+    .profile-photo {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #b39ddb;
+      background: #d1c4e9;
+      box-shadow: 0 2px 12px 0 rgba(179,157,219,0.13);
+      margin-bottom: 1.3rem;
+    }
+    nav h1 {
+      font-size: 2rem;
+      margin-bottom: 0.7rem;
+      color: #3d246c;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 8px #ede7f6;
+      font-weight: 600;
+      text-align: center;
+    }
+    .about-nav {
+      color: #7c4dff;
+      font-size: 1.08rem;
+      margin-bottom: 2.2rem;
+      text-align: center;
+      line-height: 1.6;
+      padding: 0 0.5rem;
+    }
+    .nav-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      width: 100%;
+      margin-bottom: 2.5rem;
+    }
+    .nav-btn {
+      background: linear-gradient(90deg, #b39ddb 0%, #ede7f6 100%);
+      color: #3d246c;
+      border: none;
+      padding: 0.7rem 1.2rem;
+      border-radius: 8px;
+      font-size: 1.07rem;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+      text-align: left;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      box-shadow: 0 2px 8px 0 rgba(179,157,219,0.10);
+      width: 100%;
+    }
+    .nav-btn:hover, .nav-btn:focus {
+      background: #7c4dff;
+      color: #fff;
+      outline: none;
+      box-shadow: 0 4px 16px 0 rgba(124,77,255,0.13);
+    }
+    main {
+      flex: 1;
+      padding: 3rem 3.5rem 2rem 3.5rem;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+      background: linear-gradient(135deg, #f8f6f0 0%, #ede7f6 100%);
+    }
+    section {
+      background: rgba(237,231,246,0.97);
+      border-radius: 18px;
+      box-shadow: 0 2px 12px 0 rgba(179,157,219,0.10);
+      padding: 2.2rem 2.5rem 1.7rem 2.5rem;
+      border: 1.5px solid #b39ddb;
+      transition: box-shadow 0.2s;
+      margin-bottom: 0;
+    }
+    section:hover {
+      box-shadow: 0 4px 24px 0 rgba(179,157,219,0.18);
+    }
+    h2 {
+      font-size: 1.7rem;
+      color: #7c4dff;
+      border-bottom: 1px solid #b39ddb;
+      padding-bottom: 0.4rem;
+      margin-bottom: 1.2rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    h3 {
+      color: #9575cd;
+      margin-bottom: 0.5rem;
+      font-size: 1.13rem;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+    ul {
+      list-style: disc;
+      padding-left: 1.5em;
+      margin-bottom: 0;
+      display: block;
+    }
+    ul li {
+      background: none;
+      color: #3d246c;
+      padding: 0.1rem 0;
+      border-radius: 0;
+      font-size: 1rem;
+      box-shadow: none;
+      margin-bottom: 0.2rem;
+      font-weight: 400;
+      letter-spacing: 0.2px;
+    }
+    p, a {
+      font-size: 1.07rem;
+    }
+    a {
+      color: #7c4dff;
+      text-decoration: underline;
+      transition: color 0.2s;
+    }
+    a:hover {
+      color: #3d246c;
+      text-decoration: none;
+    }
+    /* Responsive */
+    @media (max-width: 1100px) {
+      main {
+        padding: 2rem 1rem 1rem 1rem;
+      }
+      section {
+        padding: 1.2rem 1rem 1rem 1rem;
+      }
+      nav {
+        min-width: 180px;
+        padding: 1.5rem 0.5rem 1.5rem 0.5rem;
+      }
+    }
+    @media (max-width: 800px) {
+      body {
+        flex-direction: column;
+      }
+      nav {
+        flex-direction: row;
+        align-items: flex-start;
+        width: 100%;
+        height: auto;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+        border-right: none;
+        border-bottom: 1.5px solid #b39ddb;
+        padding: 1rem 0.5rem;
+        min-width: 0;
+        max-width: 100vw;
+        justify-content: flex-start;
+      }
+      .profile-photo {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 0.7rem;
+      }
+      nav h1 {
+        font-size: 1.2rem;
+        margin-bottom: 0.4rem;
+      }
+      .about-nav {
+        font-size: 0.98rem;
+        margin-bottom: 1.2rem;
+      }
+      .nav-buttons {
+        margin-bottom: 1.2rem;
+      }
+      main {
+        padding: 1rem;
+      }
+      section {
+        padding: 1.2rem 0.7rem 1rem 0.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <img class="profile-photo" src="https://www.gravatar.com/avatar/?d=mp&s=200" alt="Profile photo" />
+    <h1>Irene Zardini</h1>
+    <div class="about-nav">
+      Document Controller &amp; Digital Communication Enthusiast<br>
+      Verona, Italy
+    </div>
+    <div class="nav-buttons">
+      <button class="nav-btn" onclick="location.href='#about'">About</button>
+      <button class="nav-btn" onclick="location.href='#experience'">Experience</button>
+      <button class="nav-btn" onclick="location.href='#education'">Education</button>
+      <button class="nav-btn" onclick="location.href='#skills'">Skills</button>
+      <button class="nav-btn" onclick="location.href='#contact'">Contact</button>
+    </div>
+  </nav>
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        Hi! I'm Irene Zardini, currently working at Technital Spa as a Document Controller. I specialize in managing technical documents and contracts, and I am passionate about digital communication and innovation. My goal is to bridge the gap between technical documentation and modern digital strategies, with a focus on social media and effective communication.
+      </p>
+    </section>
+    <section id="experience">
+      <h2>Experience</h2>
+      <ul style="display:block;">
+        <li>
+          <strong>Technital Spa</strong> – Document Controller<br>
+          <span style="font-size:0.97em;color:#f7b6d2;">2022 – Present</span><br>
+          Managing technical documents and contracts, supporting digital transformation and process optimization.
+        </li>
+        <li>
+          <strong>Sales Assistant</strong> – <br>
+          <span style="font-size:0.97em;color:#f7b6d2;">2023 – 2024</span><br>
+          Provides excellent customer service by helping customers find products, answering their questions, and processing sales transactions.
+        </li>
+      </ul>
+    </section>
+    <section id="education">
+      <h2>Education</h2>
+      <ul style="display:block;">
+        <li>
+          <strong>Vocational School for Tourism and Hospitality</strong><br>
+          <span style="font-size:0.97em;color:#7c4dff;">2017 – 2020</span><br>
+          I studied at a vocational high school focused on tourism and hospitality services, with subjects such as customer service, hotel management, foreign languages, and travel organization.
+        </li>
+      </ul>
+    </section>
+    <section id="skills">
+      <h2>Skills</h2>
+      <div style="display: flex; gap: 2.5rem; flex-wrap: wrap;">
+        <div style="flex:1; min-width: 180px;">
+          <h3>Soft Skills</h3>
+          <ul style="display:block;">
+            <li>Teamwork &amp; Collaboration</li>
+            <li>Problem Solving</li>
+            <li>Adaptability</li>
+            <li>Effective Communication</li>
+            <li>Organization &amp; Time Management</li>
+          </ul>
+        </div>
+        <div style="flex:1; min-width: 180px;">
+          <h3>Hard Skills</h3>
+          <ul style="display:block;">
+            <li>Document Management</li>
+            <li>Basic Digital Communication and Social Media skills</li>
+            <li>Organization and Time Management</li>
+            <li>Microsoft Office Suite</li>
+            <li>Canva &amp; Visual Tools</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        <strong>Email:</strong> <a href="mailto:irenezardini@icloud.com">irenezardini@icloud.com</a><br>
+        <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/irene-zardini-0938972b9?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">Irene Zardini</a><br>
+        <strong>Instagram:</strong> <a href="https://www.instagram.com/ire.zardini/" target="_blank">Irene Zardini</a><br>
+      </p>
+    </section>
+  </main>
+</body>
+</html>
